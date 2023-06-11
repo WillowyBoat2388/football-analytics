@@ -1,0 +1,120 @@
+blocks:
+- all_upstream_blocks_executed: true
+  color: null
+  configuration: {}
+  downstream_blocks:
+  - trial
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: sportsapi_football
+  retry_config: null
+  status: executed
+  type: data_loader
+  upstream_blocks: []
+  uuid: sportsapi_football
+- all_upstream_blocks_executed: true
+  color: null
+  configuration: {}
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: trial
+  retry_config: null
+  status: updated
+  type: transformer
+  upstream_blocks:
+  - sportsapi_football
+  uuid: trial
+- all_upstream_blocks_executed: true
+  color: null
+  configuration: {}
+  downstream_blocks:
+  - football
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: Teams ID
+  retry_config: null
+  status: executed
+  type: data_loader
+  upstream_blocks: []
+  uuid: teams_id
+- all_upstream_blocks_executed: true
+  color: null
+  configuration:
+    file_path: null
+  downstream_blocks:
+  - football_export
+  - local_football_export
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: football
+  retry_config: null
+  status: executed
+  type: data_loader
+  upstream_blocks:
+  - teams_id
+  uuid: football
+- all_upstream_blocks_executed: true
+  color: null
+  configuration: {}
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: local football_export
+  retry_config: null
+  status: executed
+  type: data_exporter
+  upstream_blocks:
+  - football
+  uuid: local_football_export
+- all_upstream_blocks_executed: true
+  color: null
+  configuration: {}
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: Football Export
+  retry_config: null
+  status: executed
+  type: data_exporter
+  upstream_blocks:
+  - football
+  uuid: football_export
+- all_upstream_blocks_executed: true
+  color: null
+  configuration: {}
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: fixtures
+  retry_config: null
+  status: updated
+  type: data_loader
+  upstream_blocks: []
+  uuid: fixtures
+callbacks: []
+data_integration: null
+description: null
+executor_config: {}
+executor_count: 1
+executor_type: null
+extensions: {}
+name: football_analytics_pipeline
+type: python
+updated_at: '2023-06-06 16:24:44'
+uuid: football_analytics_pipeline
+widgets: []

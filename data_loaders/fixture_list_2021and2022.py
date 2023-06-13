@@ -12,26 +12,29 @@ def load_data_from_api(*args, **kwargs):
     """
     Template for loading data from API
     """
+    years = ['2021', '2022']
+    
     api_key = "6f159f8e4685b2d513dd9b68b3d22806"
     # Create a dictionary with the API key as a parameter
     headers = {'x-apisports-key': api_key}
-    years = ['2021', '2022']
     id = []
-    for year in years:
-        url = f'https://v3.football.api-sports.io/teams?country=England&league=39&season={year}'
-        response = requests.get(url,headers=headers)
+    for year in years:    
+        url = f'https://v3.football.api-sports.io/fixtures?league=39&season={year}&team=42'
+        response = requests.get(url, headers=headers)
         data = response.json()
-
+        
+        #team_name = data['response']['team']
         data_body = data['response']
 
-        for entry in data_body:            
-            for teams, content in entry.items():
-                if teams == 'team':
+        for response in data_body:
+            #print (response)
+            for fixtures, content in response.items():
+                if fixtures == 'fixture':
                     for item, contents in content.items():
                         if item == 'id':
-                            id.append([contents, year])
+                            id.append([contents,year])
 
-    df = pd.DataFrame(id, columns=['Team ID', 'Year'])
+    df = pd.DataFrame(id, columns=['Fixture ID', 'Year'])
     return df
 
 

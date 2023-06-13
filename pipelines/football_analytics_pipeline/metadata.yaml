@@ -57,12 +57,12 @@ blocks:
   language: python
   name: football
   retry_config: null
-  status: executed
+  status: updated
   type: data_loader
   upstream_blocks:
   - teams_id
   uuid: football
-- all_upstream_blocks_executed: true
+- all_upstream_blocks_executed: false
   color: null
   configuration: {}
   downstream_blocks: []
@@ -77,7 +77,7 @@ blocks:
   upstream_blocks:
   - football
   uuid: local_football_export
-- all_upstream_blocks_executed: true
+- all_upstream_blocks_executed: false
   color: null
   configuration: {}
   downstream_blocks: []
@@ -95,7 +95,24 @@ blocks:
 - all_upstream_blocks_executed: true
   color: null
   configuration: {}
-  downstream_blocks: []
+  downstream_blocks:
+  - fixtures
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: fixture_list_2021and2022
+  retry_config: null
+  status: executed
+  type: data_loader
+  upstream_blocks: []
+  uuid: fixture_list_2021and2022
+- all_upstream_blocks_executed: true
+  color: null
+  configuration: {}
+  downstream_blocks:
+  - arsenal_fixture_stats
+  - arsenal_cloud_fixture_stats
   executor_config: null
   executor_type: local_python
   has_callback: false
@@ -104,8 +121,39 @@ blocks:
   retry_config: null
   status: updated
   type: data_loader
-  upstream_blocks: []
+  upstream_blocks:
+  - fixture_list_2021and2022
   uuid: fixtures
+- all_upstream_blocks_executed: false
+  color: null
+  configuration: {}
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: Arsenal_fixture_stats
+  retry_config: null
+  status: updated
+  type: data_exporter
+  upstream_blocks:
+  - fixtures
+  uuid: arsenal_fixture_stats
+- all_upstream_blocks_executed: false
+  color: null
+  configuration: {}
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: arsenal_cloud_fixture_stats
+  retry_config: null
+  status: updated
+  type: data_exporter
+  upstream_blocks:
+  - fixtures
+  uuid: arsenal_cloud_fixture_stats
 callbacks: []
 data_integration: null
 description: null
@@ -115,6 +163,6 @@ executor_type: null
 extensions: {}
 name: football_analytics_pipeline
 type: python
-updated_at: '2023-06-06 16:24:44'
+updated_at: '2023-06-13 19:29:05'
 uuid: football_analytics_pipeline
 widgets: []

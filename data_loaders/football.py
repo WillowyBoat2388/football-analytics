@@ -20,6 +20,7 @@ def load_data_from_api(dataa, *args, **kwargs):
     years = dataa['Year'].unique().tolist()
     for year in years:
         i = 0
+
         for id, yea in zip(dataa['Team ID'], dataa['Year']):
             if yea == year:
                 # print (id)
@@ -118,7 +119,7 @@ def load_data_from_api(dataa, *args, **kwargs):
                     "Season": [year]
                 })
                 df_list.append(df)
-                if i == 10:
+                if i == 10 or i == 20:
                     time.sleep(60)
     
     full_df = pd.concat(df_list, ignore_index=True)

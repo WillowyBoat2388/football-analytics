@@ -20,7 +20,7 @@ def export_data_to_s3(df: DataFrame, **kwargs) -> None:
     config_profile = 'default'
 
     bucket_name = 'projects-contents'
-    object_key = 'PL_team_statistics_2021.csv'
+    object_key = 'PL_team_statistics_2021&22.csv'
 
     S3.with_config(ConfigFileLoader(config_path, config_profile)).export(
         df,

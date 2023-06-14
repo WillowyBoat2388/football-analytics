@@ -14,6 +14,6 @@ def export_data_to_file(df: DataFrame, **kwargs) -> None:
 
     Docs: https://docs.mage.ai/design/data-loading#fileio
     """
-    file_path = path.join(get_repo_path(), 'output/PL_team_statistics_2021.csv')
+    file_path = path.join(get_repo_path(), 'output/PL_team_statistics_2021&22.csv')
     #filepath = r'C:\Users\Asus\Documents\Github\football-analytics\output\Asenal_statistics.csv'
     FileIO().export(df, file_path)

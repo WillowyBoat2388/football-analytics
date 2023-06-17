@@ -87,7 +87,7 @@ blocks:
   language: python
   name: Football Export
   retry_config: null
-  status: updated
+  status: executed
   type: data_exporter
   upstream_blocks:
   - football
@@ -163,6 +163,6 @@ executor_type: null
 extensions: {}
 name: football_analytics_pipeline
 type: python
-updated_at: '2023-06-14 14:26:43'
+updated_at: '2023-06-14 15:13:12'
 uuid: football_analytics_pipeline
 widgets: []

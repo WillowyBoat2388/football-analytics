@@ -1,6 +1,8 @@
 import io
 import pandas as pd
 import requests
+import time
+
 if 'data_loader' not in globals():
     from mage_ai.data_preparation.decorators import data_loader
 if 'test' not in globals():
@@ -38,6 +40,7 @@ def load_data_from_api(dataa, *args, **kwargs):
         #df = pd.DataFrame.from_records(values, columns=columns, dtype = 'str')
         df = pd.DataFrame(t, index = [0])
         df['Season'] = year
+        df['Fixture'] = id
         # df = pd.json_normalize(fixture_data)
         # df['Ball Possession %'] = df['Ball Possession'].str.rstrip('%')
         # df['Passes %'] = df['Passes %'].str.rstrip('%')
@@ -45,7 +48,7 @@ def load_data_from_api(dataa, *args, **kwargs):
 
         #print(df)
         list_df.append(df)
-        if i == 10:
+        if i % 10 == 0:
             time.sleep(60)
             i = 0
     fixture_df = pd.concat(list_df, ignore_index=True)

@@ -72,6 +72,4 @@ The project directory has the following structure:
 
 ## Contributing
 
-Contributions are welcome! If you find any issues or have suggestions for improvements, please create a pull request or open an issue
-
- in the GitHub repository.
+Contributions are welcome! If you find any issues or have suggestions for improvements, please create a pull request or open an issue in the GitHub repository.

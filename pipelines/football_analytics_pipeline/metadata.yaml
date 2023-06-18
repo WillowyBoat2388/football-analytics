@@ -83,6 +83,7 @@ blocks:
   downstream_blocks:
   - arsenal_fixture_stats
   - arsenal_cloud_fixture_stats
+  - bar_chart_for_fixtures_1687082325748
   executor_config: null
   executor_type: local_python
   has_callback: false
@@ -104,7 +105,7 @@ blocks:
   language: python
   name: Arsenal_fixture_stats
   retry_config: null
-  status: updated
+  status: executed
   type: data_exporter
   upstream_blocks:
   - fixtures
@@ -119,7 +120,7 @@ blocks:
   language: python
   name: arsenal_cloud_fixture_stats
   retry_config: null
-  status: updated
+  status: executed
   type: data_exporter
   upstream_blocks:
   - fixtures
@@ -133,6 +134,30 @@ executor_type: null
 extensions: {}
 name: football_analytics_pipeline
 type: python
-updated_at: '2023-06-17 19:07:08'
+updated_at: '2023-06-18 09:59:43'
 uuid: football_analytics_pipeline
-widgets: []
+widgets:
+- all_upstream_blocks_executed: true
+  color: null
+  configuration:
+    chart_style: horizontal
+    chart_type: bar chart
+    group_by:
+    - Season
+    metrics:
+    - aggregation: average
+      column: Total passes
+    x: x
+    y: y
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: bar chart for fixtures 1687082325748
+  retry_config: null
+  status: executed
+  type: chart
+  upstream_blocks:
+  - fixtures
+  uuid: bar_chart_for_fixtures_1687082325748

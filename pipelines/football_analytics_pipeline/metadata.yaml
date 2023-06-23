@@ -27,12 +27,12 @@ blocks:
   language: python
   name: football
   retry_config: null
-  status: executed
+  status: updated
   type: data_loader
   upstream_blocks:
   - teams_id
   uuid: football
-- all_upstream_blocks_executed: true
+- all_upstream_blocks_executed: false
   color: null
   configuration: {}
   downstream_blocks: []
@@ -47,7 +47,7 @@ blocks:
   upstream_blocks:
   - football
   uuid: local_football_export
-- all_upstream_blocks_executed: true
+- all_upstream_blocks_executed: false
   color: null
   configuration: {}
   downstream_blocks: []
@@ -73,11 +73,11 @@ blocks:
   language: python
   name: fixture_list_2021and2022
   retry_config: null
-  status: executed
+  status: updated
   type: data_loader
   upstream_blocks: []
   uuid: fixture_list_2021and2022
-- all_upstream_blocks_executed: true
+- all_upstream_blocks_executed: false
   color: null
   configuration: {}
   downstream_blocks:
@@ -90,12 +90,12 @@ blocks:
   language: python
   name: fixtures
   retry_config: null
-  status: executed
+  status: updated
   type: data_loader
   upstream_blocks:
   - fixture_list_2021and2022
   uuid: fixtures
-- all_upstream_blocks_executed: true
+- all_upstream_blocks_executed: false
   color: null
   configuration: {}
   downstream_blocks: []
@@ -110,7 +110,7 @@ blocks:
   upstream_blocks:
   - fixtures
   uuid: arsenal_fixture_stats
-- all_upstream_blocks_executed: true
+- all_upstream_blocks_executed: false
   color: null
   configuration: {}
   downstream_blocks: []
@@ -134,10 +134,10 @@ executor_type: null
 extensions: {}
 name: football_analytics_pipeline
 type: python
-updated_at: '2023-06-18 09:59:43'
+updated_at: '2023-06-23 16:05:03'
 uuid: football_analytics_pipeline
 widgets:
-- all_upstream_blocks_executed: true
+- all_upstream_blocks_executed: false
   color: null
   configuration:
     chart_style: horizontal

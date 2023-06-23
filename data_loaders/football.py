@@ -2,6 +2,7 @@ import io
 import pandas as pd
 import requests
 import time
+from mage_ai.data_preparation.shared.secrets import get_secret_value
 if 'data_loader' not in globals():
     from mage_ai.data_preparation.decorators import data_loader
 if 'test' not in globals():
@@ -13,7 +14,7 @@ def load_data_from_api(dataa, *args, **kwargs):
     """
     Template for loading data from API
     """
-    api_key = "6f159f8e4685b2d513dd9b68b3d22806"
+    api_key = get_secret_value('API_Key')
     # Create a dictionary with the API key as a parameter
     headers = {'x-apisports-key': api_key}
     df_list = []
